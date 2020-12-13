@@ -1,13 +1,35 @@
 <template>
   <div class="checkbox-slider">
-      <input type="checkbox" id="my-slider">
+      <input :value="status" @change="changeValue" type="checkbox" id="my-slider">
       <label for="my-slider">Recordar contraseña</label>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CheckboxSlider'
+
+    name: 'CheckboxSlider',
+
+    props: {
+        status: {
+            type: Boolean,
+            required: true
+        }
+    },
+
+    model: {
+        prop: "status",
+        event: "change-status"
+    },
+
+    methods: {
+
+        changeValue() {
+            this.$emit("change-status", !this.status)
+        }
+
+    }
+
 }
 </script>
 

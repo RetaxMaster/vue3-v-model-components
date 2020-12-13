@@ -6,7 +6,7 @@
     </header>
 
     <div class="container">
-      <checkbox-slider />
+      <checkbox-slider :status="remember_password" @change-status="(status) => remember_password = status" />
       <span>{{ remember_password }}</span>
     </div>
     
