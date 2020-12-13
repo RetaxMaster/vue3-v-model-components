@@ -6,7 +6,7 @@
     </header>
 
     <div class="container">
-      <checkbox-slider v-model="remember_password" />
+      <checkbox-slider v-model:status="remember_password" />
       <span>{{ remember_password }}</span>
     </div>
     

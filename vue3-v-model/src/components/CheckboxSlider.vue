@@ -1,6 +1,6 @@
 <template>
   <div class="checkbox-slider">
-      <input :value="modelValue" @change="changeValue" type="checkbox" id="my-slider">
+      <input :value="status" @change="changeValue" type="checkbox" id="my-slider">
       <label for="my-slider">Recordar contraseña</label>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
     name: 'CheckboxSlider',
 
     props: {
-        modelValue: {
+        status: {
             type: Boolean,
             required: true
         }
@@ -20,7 +20,7 @@ export default {
     methods: {
 
         changeValue() {
-            this.$emit("update:modelValue", !this.modelValue)
+            this.$emit("update:status", !this.status)
         }
 
     }
